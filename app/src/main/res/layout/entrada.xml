@@ -10,7 +10,6 @@
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
 
-        <!-- Imagen con borde negro -->
         <ImageView
             android:id="@+id/imagen"
             android:layout_width="110dp"

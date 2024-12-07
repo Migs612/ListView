@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- LinearLayout con contenido desplazable -->
     <LinearLayout
         android:id="@+id/contenedor"
         android:layout_width="0dp"
@@ -41,7 +40,6 @@
         </FrameLayout>
     </LinearLayout>
 
-    <!-- TextView fijo en la parte inferior -->
     <TextView
         android:id="@+id/texto"
         android:layout_width="match_parent"

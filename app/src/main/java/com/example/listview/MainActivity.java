@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         texto = findViewById(R.id.texto);
         datos = new ArrayList<>();
 
-        // Agregar datos al ArrayList
         datos.add(new Encapsulador(R.drawable.imagen1, "Dragonite", "Tipo: Dragón/Volador. \n Conocido por su velocidad y fuerza.", false));
         datos.add(new Encapsulador(R.drawable.imagen2, "Gengar", "Tipo: Fantasma/Veneno. \n Experto en movimientos sigilosos.", false));
         datos.add(new Encapsulador(R.drawable.imagen3, "Umbreon", "Tipo: Siniestro. \n Evolución de Eevee con alta defensa.", false));
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         datos.add(new Encapsulador(R.drawable.imagen12, "Charizard", "Tipo: Fuego/Volador. \n Famoso por su poderosa llamarada.", false));
 
 
-        // Configurar el adaptador personalizado
         lista.setAdapter(new Adaptador(this, R.layout.entrada, datos) {
             @Override
             public void onEntrada(Object entrada, View view) {
@@ -50,15 +48,13 @@ public class MainActivity extends AppCompatActivity {
                 ImageView imagen = view.findViewById(R.id.imagen);
                 RadioButton miRadio = view.findViewById(R.id.boton);
 
-                // Asignar valores desde el objeto Encapsulador
                 titulo.setText(item.getTitulo());
                 datos.setText(item.getTexto());
                 imagen.setImageResource(item.getIdImagen());
 
-                // Configurar comportamiento del RadioButton
                 miRadio.setOnClickListener(v -> {
                     if (radioButtonPulsado != null)
-                        radioButtonPulsado.setChecked(false); // Desmarcar el anterior
+                        radioButtonPulsado.setChecked(false);
                     radioButtonPulsado = (RadioButton) v;
                     texto.setText("Marcada una opción");
                 });
@@ -66,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Clase Encapsulador (POJO) para manejar los datos
     public static class Encapsulador {
         private int imagen;
         private String titulo;
